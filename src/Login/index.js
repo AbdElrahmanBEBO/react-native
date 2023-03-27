@@ -12,11 +12,11 @@ export default function Login(props) {
   
   const Login = () => {
     signInWithEmailAndPassword(auth, name, password)
-    .then(userCredential => {
+    .then((userCredential) => {
       setName('it works')
     })
     .catch(error => {
-      alert(' \n code:(' + error.code + ')\n msg:( ' + error.message+' )')
+      alert(error.message)
     })
   }
 

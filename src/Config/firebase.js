@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth'
+
 const firebaseConfig = {
     apiKey: "AIzaSyDbvhQuc963mYzlXUcT1VLuA4jJY3G6Vp4",
     authDomain: "react-native-lab-a1e7e.firebaseapp.com",
