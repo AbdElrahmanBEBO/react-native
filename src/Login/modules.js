@@ -8,13 +8,8 @@ const login_style = StyleSheet.create({
       alignItems: 'center',
     },
     background_image: {
-      width:391,
+      width:'100%',
       height:230,
-    },
-    sign_in: {
-      fontSize:50,
-      fontWeight: "bold",
-      fontStyle: 'italic',
     },
     input: {
       height: 40,
@@ -23,38 +18,26 @@ const login_style = StyleSheet.create({
       borderWidth: 1,
       padding: 10,
     },    
-    btn: {
-      padding: 150,
-      margin:10
-    },
-    couner: {
-      flex:1,
-      margin:20
-    },
 });
 
-import React from 'react'
-
-import { 
-    StyleSheet,
-    View,
-    ImageBackground,
-    Text,
-    TextInput,
-    SafeAreaView,
-    Button,
-    Alert,
-} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  ImageBackground,
+  Text,
+  TextInput,
+  Button,  
+  StyleSheet,
+}from 'react-native';
 
 export {
-  login_style,
   headImage,
-  React,
+  login_style as st,  
   SafeAreaView,
   View,
   ImageBackground,
   Text,
   TextInput,
   Button,
-  Alert,
+  StyleSheet,
 }

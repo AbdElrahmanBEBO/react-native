@@ -1,54 +1,64 @@
-import { login_style, headImage, React, View, ImageBackground, Text, TextInput, SafeAreaView, Button, Alert } from './modules';
+import * as Modules from './modules';
 
+
+import React from 'react'
 import auth from '../Config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
 
 
 export default function Login(props) {
-  const [name, setName] = React.useState('')
-  const [password, setPassword] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('') 
+  const [Msg, setMsg] = React.useState('') 
   const [counter, setCounter] = React.useState(0)
   
   const Login = () => {
-    signInWithEmailAndPassword(auth, name, password)
+    signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      setName('it works')
+      setMsg('you are logged in successfully 💙💙')
     })
     .catch(error => {
-      alert(error.message)
+      setMsg('this account not exsits 😓')
     })
   }
 
   const loginImage = (
-    <ImageBackground source={headImage} style={login_style.background_image}></ImageBackground>
+    <Modules.ImageBackground source={Modules.headImage} style={Modules.st.background_image}></Modules.ImageBackground>
   )
 
   const loginForm = (
     <>
-      <Text style={login_style.sign_in}>Sign In</Text>
-      <SafeAreaView>
-        <TextInput style={login_style.input} placeholder="name" onChange={(e) => {setName(e.target.value)}} value={name} />
-        <TextInput style={login_style.input} placeholder="password" onChange={(e) => {setPassword(e.target.value)}} value={password} secureTextEntry={true} />
-      </SafeAreaView> 
-      <Button style={login_style.btn} title="Sing in" onPress={Login}/>      
+      <Modules.Text style={{fontSize:50, fontWeight: "bold", fontStyle: 'italic'}}>Sign In</Modules.Text>
+      <Modules.SafeAreaView>
+        <Modules.TextInput style={Modules.st.input} placeholder="email" onChange={(e) => {setEmail(e.target.value)}} value={email} />
+        <Modules.TextInput style={Modules.st.input} placeholder="password" onChange={(e) => {setPassword(e.target.value)}} value={password} secureTextEntry={true} />
+      </Modules.SafeAreaView> 
+      <Modules.Button title="Sing in" onPress={Login}/>      
     </>
    )
   
   const counterBox = (
-  <View style={login_style.couner}>
-    <Button style={login_style.btn} title="-" onPress={() => setCounter(state => state-1)}/>         
-    <Text style={login_style.sign_in}>{counter}</Text>                  
-    <Button style={login_style.btn} title="+" onPress={() => setCounter(state => state+1)}/>                           
-  </View>                       
+  <Modules.View style={{flexDirection: 'row', justifyContent:'center', alignItems: 'center', width: '100%', margin: 15}}>
+    <Modules.Button  title="-" onPress={() => setCounter(state => state-1)}/>         
+    <Modules.Text style={{paddingRight:30, paddingLeft:30 ,fontSize:40, fontWeight: "bold"}}>{counter}</Modules.Text>                  
+    <Modules.Button  title="+" onPress={() => setCounter(state => state+1)}/>                           
+  </Modules.View>                       
+  )
+
+  const loginMsg = (
+  <Modules.View style={Modules.st.container}>
+    <Modules.Text style={{fontSize:50, fontWeight: "bold", fontStyle: 'italic'}}>{Msg}</Modules.Text>                  
+  </Modules.View>                       
   )
 
   return (
-    <View style={login_style.container}>
+    <Modules.View style={Modules.st.container}>
       {loginImage}
       {loginForm}
-      {/* {counterBox} */}
-    </View>
+      {counterBox}
+      {loginMsg}
+    </Modules.View>
   );
 }
 
