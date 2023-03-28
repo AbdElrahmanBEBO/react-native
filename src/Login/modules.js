@@ -7,10 +7,6 @@ const login_style = StyleSheet.create({
       justifyContent: 'start',
       alignItems: 'center',
     },
-    background_image: {
-      width:'100%',
-      height:230,
-    },
     input: {
       height: 40,
       width:300,
