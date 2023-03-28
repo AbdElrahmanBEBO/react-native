@@ -4,7 +4,7 @@ import React from "react";
 import auth from "../Config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-export default function Login(props) {
+export default function Login({navigation}) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [Msg, setMsg] = React.useState("");
@@ -19,6 +19,7 @@ export default function Login(props) {
             <Modules.View>You are logged in successfully 💙</Modules.View>
           </>
         );
+        setTimeout(() => navigation.navigate('Home'), 1000)
       })
       .catch((error) => {
         setMsg(<Modules.View>This account not exsits 😓</Modules.View>);
@@ -27,8 +28,8 @@ export default function Login(props) {
 
   const loginImage = (
     <Modules.ImageBackground
-      source={Modules.headImage}
       style={{ width: "100%", height: 230 }}
+      source={Modules.headImage}
     ></Modules.ImageBackground>
   );
 

@@ -1,9 +1,9 @@
 import headImage from '../../assets/images/react.jpeg'
 
-const login_style = StyleSheet.create({
+const st = StyleSheet.create({
     container: {
       flex: 1,
-      width: 390,
+      width: '100%',
       justifyContent: 'start',
       alignItems: 'center',
     },
@@ -38,18 +38,15 @@ import {
     TextInput,
     SafeAreaView,
     Button,
-    Alert,
 } from 'react-native';
 
 export {
-  login_style,
+  st,
   headImage,
-  React,
-  SafeAreaView,
   View,
   ImageBackground,
   Text,
   TextInput,
+  SafeAreaView,
   Button,
-  Alert,
 }
