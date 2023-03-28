@@ -17,8 +17,14 @@ export default function Home({navigation}) {
       ></Modules.ImageBackground>
 
       <Modules.Button 
-        title="Back to Login Screen"
+        title="Login"
+        style={{padding:10}}
         onPress={() => navigation.navigate('Login')}          
+      />
+      <Modules.Button 
+        title="Singup"
+        style={{padding:10}}
+        onPress={() => navigation.navigate('Signup')}          
       />
     </Modules.View>);
 }

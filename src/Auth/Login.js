@@ -19,7 +19,7 @@ export default function Login({navigation}) {
             <Modules.View>You are logged in successfully 💙</Modules.View>
           </>
         );
-        setTimeout(() => navigation.navigate('Home'), 1000)
+        setTimeout(() => navigation.navigate('Profile'), 2500)
       })
       .catch((error) => {
         setMsg(<Modules.View>This account not exsits 😓</Modules.View>);

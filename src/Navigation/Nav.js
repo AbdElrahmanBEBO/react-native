@@ -4,7 +4,7 @@ import LoginStack from "./LoginStack";
 
 export default function Nav() {
 
-  const user = false;
+  const user = true;
 
   return user ? <UserStack /> : <LoginStack />;
 }

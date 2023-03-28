@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Login from '../Login';
+import Login from '../Auth/Login';
 import Home from '../Home';
 
 export default function LoginStack() {
